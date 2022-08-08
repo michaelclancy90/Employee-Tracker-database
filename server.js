@@ -37,14 +37,51 @@ function init () {
             'Exit'
         ],
         }
-    )
-}
+    ).then(answers => {
+        switch(answers.choices){
+            case 'View all employees':
+                viewAllEmployees();
+            break;
 
-viewEmployee()
+            case 'Add Employee':
+                addEmployee();
+            break;
+
+            case 'Update Employee Role':
+                updateEmployeeRole();
+            break;
+            
+            case 'View all roles':
+                viewAllRoles();
+            break;
+
+            case 'Add role':
+                addRole();
+            break;
+
+            case 'View all departments':
+                viewAllDepartments();
+            break;
+
+            case 'Add department':
+                addDepartment();
+            break;
+
+            case 'Quit':
+                db.end();
+                console.log('See you next time');
+            break;
+        }
+    });
+};
+
+viewEmployees()
 
 addEmployee()
 
 updateEmployeeRole()
+
+addRole()
 
 viewAllRoles()
 
