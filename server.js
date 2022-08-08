@@ -74,7 +74,7 @@ function init () {
         }
     });
 };
-
+/*
 const viewAllEmployees = () => {
     db.query('SELECT * FROM employees', function (err, results) {
         console.table(results);
@@ -105,5 +105,5 @@ const viewAllDepartments = () => {
 }
 
 addDepartment()
-
+*/
 init ()
