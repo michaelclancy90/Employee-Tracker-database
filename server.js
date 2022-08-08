@@ -67,9 +67,9 @@ function init () {
                 addDepartment();
             break;
 
-            case 'Quit':
+            case 'exit':
                 db.end();
-                console.log('See you next time');
+
             break;
         }
     });
@@ -80,16 +80,29 @@ const viewAllEmployees = () => {
         console.table(results);
         init();
     });
-}
+};
+
 addEmployee()
 
 updateEmployeeRole()
 
+const viewAllRoles = () => {
+    db.query('SELECT * FROM roles',(err, results) =>{
+        console.table(results);  
+        prompt();  
+    });
+}
+
 addRole()
 
-viewAllRoles()
 
-viewAllDepartments()
+
+const viewAllDepartments = () => {
+    db.query('SELECT * FROM department',(err, results) =>{
+        console.table(results);  
+        prompt();  
+    });
+}
 
 addDepartment()
 
