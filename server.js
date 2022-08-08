@@ -75,8 +75,12 @@ function init () {
     });
 };
 
-viewEmployees()
-
+const viewAllEmployees = () => {
+    db.query('SELECT * FROM employees', function (err, results) {
+        console.table(results);
+        init();
+    });
+}
 addEmployee()
 
 updateEmployeeRole()
